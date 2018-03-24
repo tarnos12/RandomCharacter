@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Random Character</title>
+    <style>
+        div {
+            text-align: center;
+        }
+        span {
+            font-size: 20em;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span id="text"></span>
+</div>
+
+<script>
+    var characters = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G"];
+    var c = characters.slice();
+
+    function loop () {
+        if(!c.length){
+            c = characters.slice();
+        }
+        var index = Math.floor(Math.random()*c.length);
+        var random = c[index];
+        c.splice(index, 1);
+        document.getElementById('text').innerHTML = random;
+    }
+    setInterval(loop, 7000);
+    loop();
+</script>
+</body>
+</html>
