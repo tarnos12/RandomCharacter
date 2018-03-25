@@ -29,8 +29,9 @@
         }
         var index = Math.floor(Math.random()*c.length);
         var random = c[index];
+        var randomNum = Math.floor(Math.random() * 5) + 1;
         c.splice(index, 1);
-        document.getElementById('text').innerHTML = random;
+        document.getElementById('text').innerHTML = randomNum + " " + random;
     }
     setInterval(loop, 7000);
     loop();
