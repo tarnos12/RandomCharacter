@@ -20,17 +20,20 @@
 </div>
 
 <script>
-    var characters = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G"];
+    var characters = ["A", "B", "C", "D", "E", "F", "G"];
+    var numbers = [1, 2, 3, 4, 5];
     var c = characters.slice();
+    var d = numbers.slice();
 
     function loop () {
-        if(!c.length){
-            c = characters.slice();
-        }
+        if(!c.length) c = characters.slice();
+        if(!d.length) d = numbers.slice();
         var index = Math.floor(Math.random()*c.length);
         var random = c[index];
-        var randomNum = Math.floor(Math.random() * 5) + 1;
+        var numIndex = Math.floor(Math.random() * d.length);
+        var randomNum = d[numIndex];
         c.splice(index, 1);
+        d.splice(numIndex, 1);
         document.getElementById('text').innerHTML = randomNum + " " + random;
     }
     setInterval(loop, 7000);
